@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        {% for pessoa in pessoas %}
+            <li> <a href="{% url 'atualiza_pessoa' pessoa.id %}">
+                Nome:{{ pessoa.primeiro_nome }} {{ pessoa.ultimo_nome }}, idade: {{ pessoa.idade }}</a>
+                <a href="{% url 'delete_pessoa' pessoa.id %}">deletar</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'cadastra_pessoa' %}">cadastrar</a>
+</body>
+</html>
