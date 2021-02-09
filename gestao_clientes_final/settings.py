@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'bootstrapform',
     'clientes',
+    'produtos',
     'home',
 ]
 
@@ -123,3 +125,5 @@ MEDIA_ROOT = 'media'
 LOGIN_URL = "/login/"
 LOGOUT_URL = "/logout/"
 LOGIN_REDIRECT_URL = "lista_pessoas"
+LOGOUT_REDIRECT_URL = "minha_home"
+
