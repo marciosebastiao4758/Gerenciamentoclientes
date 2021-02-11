@@ -5,6 +5,10 @@
 {% endblock %}
 
 {% block main %}
+<form action="">
+    <input type="text" name="Pesquisa" class="form-control" id="Pesquisa">
+    <button>Pesquisar</button>
+</form>
   <ul>
         {% for pessoa in pessoas %}
             <li> <a href="{% url 'atualiza_pessoa' pessoa.id %}">

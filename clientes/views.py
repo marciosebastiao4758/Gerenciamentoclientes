@@ -11,7 +11,12 @@ def home(request):
 
 @login_required
 def pessoa(request):
-    pessoas = Pessoa.objects.all()
+    termo_pesquisa = request.GET.get("Pesquisa", None)
+    if termo_pesquisa:
+        pessoas = Pessoa.objects.all()
+        pessoas = pessoas.filter(primeiro_nome=termo_pesquisa)
+    else:
+        pessoas = Pessoa.objects.all()
     return render(request, 'pessoa.html', {'pessoas': pessoas})
 
 
